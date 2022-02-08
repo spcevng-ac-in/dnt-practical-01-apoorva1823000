@@ -8,12 +8,23 @@ namespace Practical_1
 {
     internal class Program
     {
+            static int getSum(int n)
+            {
+                int sum = 0;
+
+                while (n != 0)
+                {
+                    sum = sum + n % 10;
+                    n = n / 10;
+                }
+
+                return sum;
+            }
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter two numbers");
+            Console.WriteLine("Enter the number");
             int number1 = Convert.ToInt32(Console.ReadLine());
-            int number2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"summation of {number1} and {number2} is {number1+number2}");
+            Console.WriteLine($"summation of {number1} is {getSum(number1)}");
             Console.ReadLine();
 
         }
